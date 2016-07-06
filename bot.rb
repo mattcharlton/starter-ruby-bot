@@ -53,6 +53,19 @@ if direct_message?(data)
       logger.debug("And it was a direct message")
     end
 
+ when 'got', 'thrones', 'game of thrones', then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "You're in the great game now, and the great game is terrifying"
+    logger.debug("<@#{data['user']}> chicken")
+    end
+
+ when 'tyrion' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that\'s what he does."
+    logger.debug("<@#{data['user']}> chicken")
+    end
+    
+
   when 'attachment', 'bot attachment' then
     # attachment messages require using web_client
     client.web_client.chat_postMessage(post_message_payload(data))
