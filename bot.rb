@@ -68,7 +68,7 @@ client.on :message do |data|
 end
 
 def direct_message?(data)
-  # direct message channles start with a 'D'
+  # direct message channels start with a 'D'
   data['channel'][0] == 'D'
 end
 
@@ -84,6 +84,7 @@ end
 def help
   %Q(I will respond to the following messages: \n
       `bot hi` for a simple message.\n
+      `nandos or chicken` for to see my love of chicken.\n
       `bot attachment` to see a Slack attachment message.\n
       `@<your bot\'s name>` to demonstrate detecting a mention.\n
       `bot help` to see this again.)
