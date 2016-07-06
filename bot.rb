@@ -37,14 +37,20 @@ client.on :message do |data|
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "Hello <@#{data['user']}>."
     logger.debug("<@#{data['user']}> said hi")
-    
-    when 'nandos', 'chicken' then
-    client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?."
-    logger.debug("<@#{data['user']}> chicken")
 
     if direct_message?(data)
       client.message channel: data['channel'], text: "It\'s nice to talk to you directly."
+      logger.debug("And it was a direct message")
+    end
+    
+case data['text']
+    when 'nandos', 'chicken' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?  We should totally go there for lunch today."
+    logger.debug("<@#{data['user']}> chicken")
+
+if direct_message?(data)
+      client.message channel: data['channel'], text: "What a spicy message this is."
       logger.debug("And it was a direct message")
     end
 
