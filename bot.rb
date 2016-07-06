@@ -37,33 +37,32 @@ client.on :message do |data|
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "Hello <@#{data['user']}>."
     logger.debug("<@#{data['user']}> said hi")
-
+    
+  when 'tyrion' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that's what he does."
+    logger.debug("<@#{data['user']}> tyrion")
+    
+   when 'got', 'thrones', 'game of thrones' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "You're in the great game now, and the great game is terrifying"
+    logger.debug("<@#{data['user']}> got")
+    
+   when 'nandos', 'chicken' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?  We should totally go there for lunch today."
+    logger.debug("<@#{data['user']}> chicken")
+  
     if direct_message?(data)
       client.message channel: data['channel'], text: "It\'s nice to talk to you directly."
       logger.debug("And it was a direct message")
     end
-    
-    when 'nandos', 'chicken' then
-    client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?  We should totally go there for lunch today."
-    logger.debug("<@#{data['user']}> chicken")
 
    if direct_message?(data)
       client.message channel: data['channel'], text: "What a spicy message this is."
       logger.debug("And it was a direct message")
     end
 
-  when 'got', 'thrones', 'game of thrones' then
-    client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "You're in the great game now, and the great game is terrifying"
-    logger.debug("<@#{data['user']}> got") else
-    end
-
-  when 'tyrion' then
-    client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that's what he does."
-    logger.debug("<@#{data['user']}> tyrion") else
-    end
     
   when 'attachment', 'bot attachment' then
     # attachment messages require using web_client
