@@ -43,6 +43,11 @@ client.on :message do |data|
     client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that's what he does."
     logger.debug("<@#{data['user']}> tyrion")
     
+      when 'jon snow' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "He knows nothing."
+    logger.debug("<@#{data['user']}> tyrion")
+    
    when 'got', 'thrones', 'game of thrones' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "You're in the great game now, and the great game is terrifying"
