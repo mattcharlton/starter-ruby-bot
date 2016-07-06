@@ -40,7 +40,7 @@ client.on :message do |data|
     
     when 'nandos', 'chicken' then
     client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}>."
+    client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?."
     logger.debug("<@#{data['user']}> chicken")
 
     if direct_message?(data)
