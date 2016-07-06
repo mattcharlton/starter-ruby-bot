@@ -56,17 +56,13 @@ client.on :message do |data|
   when 'got', 'thrones', 'game of thrones' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "You're in the great game now, and the great game is terrifying"
-    logger.debug("<@#{data['user']}> got")
-    
-       if direct_message?(data)
-      client.message channel: data['channel'], text: "What a spicy message this is."
-      logger.debug("And it was a direct message")
+    logger.debug("<@#{data['user']}> got") else
     end
 
   when 'tyrion' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that's what he does."
-    logger.debug("<@#{data['user']}> tyrion") then
+    logger.debug("<@#{data['user']}> tyrion") else
     end
     
   when 'attachment', 'bot attachment' then
