@@ -1,9 +1,9 @@
 name: Matt bot
-description: A simple Ruby bot starter for Beep Boop
+description: First attempt at the syseng bot for WH
 avatar: resources/avatar.png
 #background: resources/background.png
 config:
- - name: Tyrion_Lannister
+ - name: Bob
 #    friendly_name: Some Unnecessary Option
 #    info: This is an unnecessary option
 #    default: the default value
