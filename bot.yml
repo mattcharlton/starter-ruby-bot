@@ -1,6 +1,6 @@
 name: Engineer_bot
 description: First attempt at the syseng bot for WH
-avatar: resources/avatar.png
+avatar: resources/avatar.jpg
 #background: resources/background.png
 config:
  - name: Bob
