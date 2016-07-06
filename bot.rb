@@ -48,12 +48,12 @@ client.on :message do |data|
     client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?  We should totally go there for lunch today."
     logger.debug("<@#{data['user']}> chicken")
 
-if direct_message?(data)
+   if direct_message?(data)
       client.message channel: data['channel'], text: "What a spicy message this is."
       logger.debug("And it was a direct message")
     end
 
- when 'got', 'thrones', 'game of thrones', then
+ when 'got', 'thrones', 'game of thrones' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "You're in the great game now, and the great game is terrifying"
     logger.debug("<@#{data['user']}> chicken")
