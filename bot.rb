@@ -61,7 +61,7 @@ if direct_message?(data)
 
  when 'tyrion' then
     client.typing channel: data['channel']
-    client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that\'s what he does."
+    client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that's what he does."
     logger.debug("<@#{data['user']}> chicken")
     end
     
