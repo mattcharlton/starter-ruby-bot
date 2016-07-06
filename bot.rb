@@ -38,7 +38,7 @@ client.on :message do |data|
     client.message channel: data['channel'], text: "Hello <@#{data['user']}>."
     logger.debug("<@#{data['user']}> said hi")
     
-  when 'wifi password' then
+  when 'wifi password', 'wifi password?' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "The wifi password is [REDACTED]. Currently in a public repo, if we paid for this then we could use it a bit more."
     logger.debug("<@#{data['user']}> tyrion")
