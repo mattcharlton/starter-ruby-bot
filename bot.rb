@@ -43,7 +43,6 @@ client.on :message do |data|
       logger.debug("And it was a direct message")
     end
     
-case data['text']
     when 'nandos', 'chicken' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?  We should totally go there for lunch today."
