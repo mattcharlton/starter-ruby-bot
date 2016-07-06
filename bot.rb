@@ -63,7 +63,7 @@ client.on :message do |data|
       logger.debug("And it was a direct message")
     end
 
-  if 'tyrion' then
+  when 'tyrion' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "Tyrion Lannister, the imp.  He drinks wine and he knows things, that's what he does."
     logger.debug("<@#{data['user']}> tyrion")
