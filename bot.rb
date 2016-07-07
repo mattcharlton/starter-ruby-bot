@@ -33,7 +33,7 @@ end
 client.on :message do |data|
 
   case data['text']
-  when *'hi'*, 'bot hi' then
+  when 'hi', 'bot hi' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "Hello <@#{data['user']}>."
     logger.debug("<@#{data['user']}> said hi")
