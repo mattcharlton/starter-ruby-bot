@@ -32,7 +32,7 @@ end
 # listen for message event - https://api.slack.com/events/message
 client.on :message do |data|
 
-  case data['text']
+  case data['*text']
   when 'hi', 'bot hi' then
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "Hello <@#{data['user']}>."
