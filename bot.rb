@@ -67,6 +67,11 @@ client.on :message do |data|
     client.typing channel: data['channel']
     client.message channel: data['channel'], text: "I love me some peri-peri, how about you, <@#{data['user']}> ?  We should totally go there for lunch today."
     logger.debug("<@#{data['user']}> chicken")
+     
+   when 'sync', 'tracker', 'git', 'changes' then
+    client.typing channel: data['channel']
+    client.message channel: data['channel'], text: "Don't take this the wrong way, but have you double checked that you've done a 'git push' after your commit?"
+    logger.debug("<@#{data['user']}> git")
   
     if direct_message?(data)
       client.message channel: data['channel'], text: "It\'s nice to talk to you directly."
